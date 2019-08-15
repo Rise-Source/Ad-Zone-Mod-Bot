@@ -1,0 +1,34 @@
+var Discord = require("discord.js");
+var prefix = "az!"
+var client = new Discord.Client();
+
+client.on("ready"),()=>{
+console.log("ready to rumble!");
+});
+
+client.on("message",msg => {
+if (msg.guild === null) return;
+if (msg.author.bot) return;
+
+if (msge.content.toLowerCase().startsWith(prefix)) return;
+
+if msg.content.roLowerCase().startsWith(prefix ="kick")) {var mem = msg.mention.members.first();
+mem.kick().then(() => {
+msg.channel.send(msg.displayName + " has successfully been kicked!"+ msg.author.username + "!");
+}).catch(e => {
+msg.channel.send("An error occured");
+});
+}
+if msg.content.roLowerCase().startsWith(prefix ="ban")) {var mem = msg.mention.members.first();
+var mc = msg.content.split(" ")[2];
+mem.ban (mc).then(() => {
+msg.channel.send(msg.displayName + " has successfully been banned!"+ msg.author.username + "for" + mc + " days!");
+}).catch(e => {
+msg.channel.send("An error occured");
+});
+}
+
+
+})
+
+client.login("");
